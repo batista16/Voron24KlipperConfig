@@ -1,6 +1,7 @@
 [server]
 host = 0.0.0.0
 port = 7125
+max_upload_size = 1024
 
 [file_manager]
 enable_object_processing = True
@@ -12,10 +13,11 @@ gcode_store_size = 1000
 [authorization]
 force_logins = False
 cors_domains = 
-	*.local
-	*.home
-	*.lan
-	*://app.fluidd.xyz
+	https://my.mainsail.xyz
+	http://my.mainsail.xyz
+	http://*.local
+	http://*.home
+	http://*.lan
 trusted_clients = 
 	10.0.0.0/8
 	127.0.0.0/8
@@ -29,21 +31,19 @@ trusted_clients =
 
 [history]
 
+[announcements]
+subscriptions = 
+	mainsail
+
 [timelapse]
 
 [update_manager]
 enable_auto_refresh = True
 refresh_interval = 6
 
-[update_manager client z_calibration]
-type = git_repo
-path = /home/pi/klipper_z_calibration
-origin = https://github.com/protoloft/klipper_z_calibration.git
-install_script = install.sh
-
 [update_manager client mainsail]
 type = web
-channel = beta
+channel = stable
 repo = mainsail-crew/mainsail
 path = ~/mainsail
 
@@ -52,13 +52,7 @@ type = git_repo
 primary_branch = main
 path = ~/moonraker-timelapse
 origin = https://github.com/mainsail-crew/moonraker-timelapse.git
-
-[update_manager ercf-happy_hare]
-type = git_repo
-path = ~/ERCF-Software-V3
-origin = https://github.com/moggieuk/ERCF-Software-V3.git
-install_script = install.sh
-managed_services = klipper
+is_system_service = False
 
 [update_manager led_effect]
 type = git_repo
