@@ -12,10 +12,12 @@ iface can0 can static
 cd katapult
 make menuconfig
 make
-dfu-util -l
-dfu-util -a 0 -D out/katapult.bin -s 0x08000000:mass-erase:force --device xxxxx
+sudo dfu-util -l
+sudo dfu-util -a 0 -D out/katapult.bin -s 0x08000000:mass-erase:force --device xxxxx
+
 
 # to flash klipper to ebb
+cd ~/klipper
 make menuconfig
   Enable extra low-level configuration options: check
   Micro-controller Architecture: STMicroelectronics STM32
@@ -26,4 +28,7 @@ make menuconfig
   CAN bus speed: 1000000
 make clean
 make
-python3 ~/CanBoot/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 688255e1d011
+
+sudo service klipper stop
+python3 ~/katapult/scripts/flashtool.py -i can0 -q
+python3 ~/katapult/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u aa975c1b5e99
