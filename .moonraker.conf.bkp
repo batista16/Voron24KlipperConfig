@@ -87,3 +87,11 @@ primary_branch = main
 install_script = install.sh
 managed_services = klipper
 
+[update_manager klipper-toolchanger-easy]
+type = git_repo
+channel = dev
+path = ~/klipper-toolchanger-easy
+origin = https://github.com/jwellman80/klipper-toolchanger-easy.git
+managed_services = klipper
+primary_branch = main
+
