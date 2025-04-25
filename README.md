@@ -32,3 +32,16 @@ make
 sudo service klipper stop
 python3 ~/katapult/scripts/flashtool.py -i can0 -q
 python3 ~/katapult/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u aa975c1b5e99
+
+
+# TODO:
+- [ ] Add feet to the docks (waiting on screws)
+- [ ] Add screw in magnets to ducts (waiting on screws)
+- [ ] Figure out proper LED management for multitool
+- [ ] Add wiper
+- [ ] Add T2
+- [ ] Make PRs with all the mods
+- [ ] Lube the spring steel, as it's geting rusty already
+- [ ] Rotate the PTC heater 90º and try to angle it somehow, without plastic parts
+- [ ] Research a fan that would help air circulation between the heater and bedfans
+- [ ] Vinyl tophat coolness, maybe with voron serial and sc serial
