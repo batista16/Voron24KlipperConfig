@@ -38,6 +38,8 @@ python3 ~/katapult/scripts/flash_can.py -i can0 -f ~/klipper/out/klipper.bin -u 
 - [ ] Add feet to the docks (waiting on screws)
 - [ ] Add screw in magnets to ducts (waiting on screws)
 - [ ] Figure out proper LED management for multitool
+- [ ] Figure out why so slow between tools
+- [ ] Figure out how to choose tools after the fact.. as in, in mainsail, not slicer.. 
 - [ ] Add wiper
 - [ ] Add T2
 - [ ] Make PRs with all the mods
