@@ -53,6 +53,8 @@ In `~/klipper-toolchanger-easy/klipper/extras/` (untracked relative to ktc-easy 
 
 If ktc-easy / klipper / moonraker get re-cloned, these dropped-in files will be lost. Worth either re-vendoring them properly or just keeping a tarball backup.
 
+**Override pattern for ktc-easy stealthchanger configs**: most files under `printer_data/config/stealthchanger/toolchanger/` are symlinks to `~/klipper-toolchanger-easy/stealthchanger/`. Don't edit them in place (it dirties the ktc-easy git tree and conflicts with future updates). Instead, redefine the section in `printer_data/config/stealthchanger/toolchanger-config.cfg` — that file is loaded last and Klipper merges same-named sections, with later definitions overriding earlier keys. Existing examples: `[toolchanger] params_pickup_path` (custom YY-wiggle) and `[tool_probe_endstop] crash_gcode` (PAUSE instead of M84, added 2026-05-05).
+
 ## `printer_data/config` repo state
 
 - Remote: `github.com/batista16/Voron24KlipperConfig` (public)
